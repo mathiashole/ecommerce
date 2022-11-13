@@ -4,6 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-signin-client_id" content="239162348248-c16mnpoca1fqsgmq11pt59ebv6d6nnsl.apps.googleusercontent.com">
   <title>eMercado - Todo lo que busques está aquí</title>
   
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -19,7 +20,31 @@
 <body>
   <main class="mt-5">
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
+      <div>
+        <img src="img/login.png" class="logitron" id="imgLogin">
+      </div>
+      <div><h1 class="mb-1" style="text-align:center">Inicio de sesion</h1></div>
+      <p class="warnings" id="warnings"></p>
+      <div class="container email">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emailTag" required placeholder="Enter your email address">
+
+        <p class="text-center alert-danger" id="emailParagraph"></p> 
+      </div>
+
+      <div class="container pass">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="passwordTag" required placeholder="Enter your password">
+
+        <p class="text-center alert-danger" id="passParagraph"></p> 
+      </div>
+      <button class="btn btn-primary" type="submit" id="loginBtn">Ingresar</button>
+      <div class="col-lg-3 offset-lg-5 col-md-12 mb-1 container">
+        <div class="g-signin2 btn" data-onsuccess="onSignIn"></div><p> acceda con su cuenta google</p>
+        <a href="#" onclick="signOut();">Sign out</a>
+      </div>
+
+      <div class="alert alert-danger text-center" role="alert" id="alertClean">
         <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
       </div>
     </div>
@@ -35,6 +60,8 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </body>
 
 </html>
